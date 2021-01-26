@@ -22,8 +22,11 @@ Examples:
 
 advancedExponent(2, 0); // 1
 advancedExponent(2, 1); // 2
+2 * (1) ** 2
 advancedExponent(2, 2); // 4
+
 advancedExponent(2, 3); // 8
+2 * (2, 2)
 advancedExponent(2, 4); // 16
 advancedExponent(2, 5); // 32
 advancedExponent(2, 6); // 64
@@ -38,11 +41,37 @@ For each of the examples above, figure out how many times your code should
 be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
 ***********************************************************************/
+// exponent(b, n) // exponent(b, n / 2) ** 2             [for even n]
+// 
+// function exponent(num, pow) {
+//   if (pow > 0) {
 
+//     if (pow === 1) {
 
-function advancedExponent(b, n) {
-  // your code here
-}
+//       return num;
+//     }
+
+//     return num * exponent(num, pow - 1)
+//   } else {
+
+//     if (pow === -1) {
+
+//       return num;
+//     }
+
+//     return 1 / (num * exponent(num, pow + 1))
+//   }
+// }
+// function advancedExponent(b, n) {
+//   if (n === 0) {
+//     return 1;
+//   }
+//   if (n % 2 === 0) {
+//     return advancedExponent(b, n / 2) * advancedExponent(b, n / 2) + advancedExponent(b, n - 1);
+//   } else {
+//     return (b * advancedExponent(b, n - 1)) * (b * advancedExponent(b, n - 1)) + advancedExponent(b, n - 1);
+//   }
+// }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
