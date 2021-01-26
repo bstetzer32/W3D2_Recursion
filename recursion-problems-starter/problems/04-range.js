@@ -11,7 +11,19 @@ range(7, 6); // []
 ***********************************************************************/
 
 
-// your code here
+function range(start, end) {
+  if (end < start) {
+    return [];
+  }
+  if (start + 1 === end) {
+    return start;
+  }
+  let array = [];
+  let num = range(start + 1, end)
+  return array;
+}
+
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
