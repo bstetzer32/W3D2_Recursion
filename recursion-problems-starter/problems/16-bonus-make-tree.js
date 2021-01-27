@@ -78,8 +78,7 @@ const categories2 = [
 
 const makeTree = (categories, parent) => {
   let obj1 = {};
-  let obj2 = {};
-  let obj3 = {};
+
   let parents = [];
   let array = [];
   for (let i = 0; i < categories.length; i++) {
@@ -89,17 +88,29 @@ const makeTree = (categories, parent) => {
   }
   for (let i = 0; i < categories.length; i++) {
     let el = categories[i];
-    let {parent: parent1} = el;
+
+    let { parent: parent1 } = el;
+    // for (let j = 0; j < categories.length; j++) {
+    //   let el2 = categories[j];
+    //   if (el2.parent === el.id) {
+    //     array.push(el2);
+    //   }
+    // }
     debugger
+
     if (parent1 === parent) {
       debugger
       obj1[el.id] = makeTree(categories, el.id)
+
     } else if (parents.indexOf(el.id) === -1) {
+      debugger
       return obj1;
+
     }
-    return obj1;
+
+
   };
-  console.log(obj1)
+
 }
 
 const tree2 = makeTree(categories2, null);
