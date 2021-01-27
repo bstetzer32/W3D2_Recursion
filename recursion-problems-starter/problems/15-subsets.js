@@ -14,7 +14,12 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
      subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
-// your code here
+function subsets(array) {
+  let newArray = [];
+  if (newArray[newArray.length - 1] === [array]) {
+    
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

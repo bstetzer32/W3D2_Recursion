@@ -14,13 +14,12 @@ function flatten(array) {
   if (array.length === 0) {
     return [];
   }
-  if (typeof array[array.length - 1] === 'object') {
-    array = [[array.slice(0, array.length - 1)], ...array[array.length - 1]];
-    return flatten(array);
+  if (typeof array[0] === 'object') {
+    return flatten(array.flat());
   }
-  return array;
+  value = array.shift();
+  return [value, ...flatten(array.flat())];
 }
-console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
