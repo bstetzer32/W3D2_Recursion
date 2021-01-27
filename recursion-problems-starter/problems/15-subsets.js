@@ -15,12 +15,25 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 function subsets(array) {
-  let newArray = [];
-  if (newArray[newArray.length - 1] === [array]) {
-    
-  }
-}
 
+  if (!array.length) {
+    return [[]];
+  }
+  let end = array[array.length - 1]
+  debugger
+  let subSet = subsets(array.slice(0, array.length - 1));
+  debugger
+  let subRecall = subSet.map(function (el) {
+    debugger
+    let subArray = el.slice(0);
+    subArray.push(end);
+    debugger
+    return subArray;
+  })
+  debugger
+  return [...subSet, ...subRecall]
+}
+console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = subsets;
