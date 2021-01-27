@@ -60,13 +60,49 @@ The call above should return the tree below:
         }
     }
 }
-
+git 
 ***********************************************************************/
 
-const makeTree = (categories, parent) => {
-  // your code here
-};
+const categories2 = [
+  { id: 'animals', 'parent': null },
+  { id: 'mammals', 'parent': 'animals' },
+  { id: 'cats', 'parent': 'mammals' },
+  { id: 'dogs', 'parent': 'mammals' },
+  { id: 'chihuahua', 'parent': 'dogs' },
+  { id: 'labrador', 'parent': 'dogs' },
+  { id: 'persian', 'parent': 'cats' },
+  { id: 'siamese', 'parent': 'cats' }
+];
 
+
+
+const makeTree = (categories, parent) => {
+  let obj1 = {};
+  let obj2 = {};
+  let obj3 = {};
+  let parents = [];
+  let array = [];
+  for (let i = 0; i < categories.length; i++) {
+    let el = categories[i];
+    parents.push(el.parent)
+    debugger
+  }
+  for (let i = 0; i < categories.length; i++) {
+    let el = categories[i];
+    let {parent: parent1} = el;
+    debugger
+    if (parent1 === parent) {
+      debugger
+      obj1[el.id] = makeTree(categories, el.id)
+    } else if (parents.indexOf(el.id) === -1) {
+      return obj1;
+    }
+    return obj1;
+  };
+  console.log(obj1)
+}
+
+const tree2 = makeTree(categories2, null);
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = makeTree;
